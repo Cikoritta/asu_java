@@ -1,60 +1,116 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-    <h1>Гайд по типам данных, их объявлению, вводу и выводу в Java</h1>
+В Java типы данных можно разделить на примитивные и ссылочные. Примитивные типы данных представляют собой простые значения, такие как числа и символы. Ссылочные типы данных включают объекты и массивы.
 
-    <h2>Типы данных в Java</h2>
-    <p>Java поддерживает два основных типа данных:</p>
-    <ul>
-        <li><strong>Примитивные типы данных:</strong> byte, short, int, long, float, double, char, boolean</li>
-        <li><strong>Ссылочные типы данных:</strong> классы, интерфейсы, массивы</li>
-    </ul>
+Java имеет 8 примитивных типов данных:
 
-    <h3>Примитивные типы данных</h3>
-    <p>Примитивные типы данных имеют фиксированный размер и представляют базовые значения.</p>
-    <pre><code>// Примеры объявления примитивных типов данных
-int myNumber = 42;
-double myDouble = 3.14;
-char myChar = 'A';
-boolean myBoolean = true;
-    </code></pre>
 
-    <h2>Объявление переменных</h2>
-    <p>Переменные в Java объявляются с указанием типа данных, после чего следует имя переменной и её начальное значение (необязательно).</p>
-    <pre><code>// Пример объявления переменной
-int age = 25;
-String name = "Иван";
-    </code></pre>
+1. **byte**: 8-битное целое число
+   ```java
+   byte b = 100;
+   ```
 
-    <h2>Ввод данных</h2>
-    <p>Для ввода данных из консоли используется класс <code>Scanner</code>.</p>
-    <pre><code>import java.util.Scanner;
+2. **short**: 16-битное целое число
+   ```java
+   short s = 10000;
+   ```
+
+3. **int**: 32-битное целое число
+   ```java
+   int i = 100000;
+   ```
+
+4. **long**: 64-битное целое число
+   ```java
+   long l = 10000000000L;
+   ```
+
+5. **float**: 32-битное число с плавающей запятой
+   ```java
+   float f = 10.5f;
+   ```
+
+6. **double**: 64-битное число с плавающей запятой
+   ```java
+   double d = 20.99;
+   ```
+
+7. **char**: 16-битный символ Unicode
+   ```java
+   char c = 'A';
+   ```
+
+8. **boolean**: Логический тип (true или false)
+   ```java
+   boolean bool = true;
+   ```
+
+## Ссылочные Типы Данных
+
+Ссылочные типы данных включают объекты и массивы. Примеры:
+
+1. **String**: Класс для работы со строками
+   ```java
+   String str = "Hello, World!";
+   ```
+
+2. **Массивы**: Контейнеры для хранения нескольких элементов одного типа
+   ```java
+   int[] numbers = {1, 2, 3, 4, 5};
+   ```
+
+## Объявление Переменных
+
+Для объявления переменных указывайте тип данных и имя переменной:
+
+```java
+int age;
+String name;
+```
+
+Инициализация переменной происходит при присвоении значения:
+
+```java
+age = 30;
+name = "Alice";
+```
+
+Можно объединить объявление и инициализацию:
+
+```java
+int age = 30;
+String name = "Alice";
+```
+
+## Ввод Данных
+
+Для ввода данных в Java можно использовать класс `Scanner`. Пример:
+
+```java
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
+
         System.out.print("Введите ваше имя: ");
         String name = scanner.nextLine();
-        
+
         System.out.print("Введите ваш возраст: ");
         int age = scanner.nextInt();
-        
+
         System.out.println("Привет, " + name + "! Вам " + age + " лет.");
     }
 }
-    </code></pre>
+```
 
-    <h2>Вывод данных</h2>
-    <p>Для вывода данных используется класс <code>System.out</code>. В основном применяются методы <code>print</code>, <code>println</code> и <code>printf</code>.</p>
-    <pre><code>System.out.println("Привет, мир!"); // Печатает строку и переходит на новую строку
-System.out.print("Привет, мир!"); // Печатает строку без перехода на новую строку
-System.out.printf("Возраст: %d лет\n", age); // Печатает отформатированную строку
-    </code></pre>
+## Вывод Данных
 
-</body>
-</html>
+Для вывода данных в Java можно использовать `System.out.println()` и `System.out.print()`. Примеры:
+
+```java
+// Вывод с переводом строки
+System.out.println("Привет, мир!");
+
+// Вывод без перевода строки
+System.out.print("Привет, ");
+System.out.print("мир!");
+```
